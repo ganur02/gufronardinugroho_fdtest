@@ -124,7 +124,7 @@ export default function Navbar({ title = "BooksApp" }) {
 
             <div className="flex items-center space-x-4">
               <div className="hidden md:block">
-                <ProfileDropdown options={profileOptions} onAction={handleProfileAction} isLoading={isLoggingOut} />
+                <ProfileDropdown options={profileOptions} onAction={handleProfileAction} isLoading={isLoggingOut} user={user}/>
               </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}

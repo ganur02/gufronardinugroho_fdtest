@@ -28,7 +28,7 @@ const handleLogout = async () => {
   }
 }
 
-export default function ProfileDropdown({ options }) {
+export default function ProfileDropdown({ options, user }) {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
@@ -50,8 +50,12 @@ export default function ProfileDropdown({ options }) {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center space-x-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white px-4 py-2.5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl backdrop-blur-sm border border-blue-400/30"
       >
-        <div className="w-8 h-8 bg-gradient-to-br from-blue-300 to-cyan-300 rounded-full flex items-center justify-center shadow-inner">
-          <User size={16} className="text-blue-900" />
+        <div className="w-8 h-8 bg-white rounded-full overflow-hidden">
+          {user?.foto ? (
+            <img src={user.foto} alt="User" className="w-full h-full object-cover" />
+          ) : (
+            <User size={16} className="text-blue-900" />
+          )}
         </div>
         <motion.div animate={{ rotate: isOpen ? 180 : 0 }} transition={{ duration: 0.3 }}>
           <ChevronDown size={16} />
@@ -65,9 +69,26 @@ export default function ProfileDropdown({ options }) {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -10, scale: 0.95 }}
             transition={{ duration: 0.3 }}
-            className="absolute right-0 mt-3 w-56 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-blue-200/50 py-2 z-50 overflow-hidden"
+            className="absolute right-0 mt-3 w-64 bg-white/95 backdrop-blur-md rounded-xl shadow-2xl border border-blue-200/50 py-2 z-50 overflow-hidden"
           >
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-cyan-500" />
+
+            {/* USER INFO */}
+            <div className="px-4 py-4 border-b border-blue-100 flex items-center space-x-4">
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                {user?.foto ? (
+                  <img src={user.foto} alt={user.nama} className="w-full h-full object-cover" />
+                ) : (
+                  <span className="text-blue-700 font-semibold text-xl">{user?.nama?.[0] ?? "?"}</span>
+                )}
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-blue-900">{user?.nama ?? "Guest"}</p>
+                <p className="text-xs text-blue-500">{user?.email ?? "-"}</p>
+              </div>
+            </div>
+
+            {/* MENU OPTIONS */}
             {options.map((option, index) => {
               const IconComponent = iconMap[option.icon]
 

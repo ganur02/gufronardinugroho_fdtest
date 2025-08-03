@@ -156,7 +156,7 @@ export default function Home({ flash }) {
                   <h2 className="text-3xl font-bold text-white mb-2">
                     {getGreeting()}, {user.nama || "Pengguna"}!
                   </h2>
-                  <p className="text-blue-100 text-lg">Siap untuk membuat hari ini produktif?</p>
+                  <p className="text-blue-100 text-lg">Di halaman home Book App</p>
                 </div>
                 <div className="hidden md:block">
                   <div className="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center">

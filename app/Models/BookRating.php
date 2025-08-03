@@ -1,20 +1,18 @@
 <?php
 
-namespace Database\Factories;
+namespace App\Models;
 
-use App\Models\BookRating;
-use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class BookRatingFactory extends Factory
+class BookRating extends Model
 {
-    protected $model = BookRating::class;
+    use HasFactory;
 
-    public function definition(): array
+    protected $fillable = ['book_id', 'ip_address', 'rating'];
+
+    public function book()
     {
-        return [
-            'book_id' => \App\Models\Book::factory(),
-            'ip_address' => $this->faker->ipv4(),
-            'rating' => $this->faker->numberBetween(1, 5),
-        ];
+        return $this->belongsTo(Book::class);
     }
 }
