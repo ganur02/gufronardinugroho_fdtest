@@ -119,20 +119,8 @@ npm run build
 
 ## 📑 Git & Repository
 
-* Nama repository: **gufronardinugroho\_fdtest**
+* Nama repository: **gufronardinugroho_fdtest**
 * Branch utama: **main**
-
----
-
-## 🤝 Kontribusi
-
-Jika menemukan bug atau memiliki fitur yang diinginkan, silakan:
-
-1. **Fork** repository ini.
-2. Buat **branch** baru: `feature/nama-fitur` atau `bugfix/deskripsi-bug`.
-3. **Commit** perubahan Anda.
-4. **Push** ke branch Anda.
-5. Buka **Pull Request** di repo utama.
 
 ---
 
