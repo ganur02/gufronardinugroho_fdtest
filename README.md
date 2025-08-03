@@ -44,13 +44,23 @@ Proyek ini merupakan aplikasi **Laravel 10.x** dengan front-end **React** dan **
 
    Sesuaikan pengaturan database di file `.env`:
 
-   ```dotenv
+   ```
    DB_CONNECTION=pgsql
    DB_HOST=127.0.0.1
    DB_PORT=5432
    DB_DATABASE=gufronardinugroho_fdtest
    DB_USERNAME=your_db_username
    DB_PASSWORD=your_db_password
+   ```
+   ```
+   MAIL_MAILER=smtp
+   MAIL_HOST=smtp.mailtrap.io
+   MAIL_PORT=2525
+   MAIL_USERNAME=your_username
+   MAIL_PASSWORD=your_password
+   MAIL_ENCRYPTION=tls
+   MAIL_FROM_ADDRESS=example@example.com
+   MAIL_FROM_NAME="Your App Name"
    ```
 
 4. **Generate application key**:
