@@ -52,6 +52,7 @@ Proyek ini merupakan aplikasi **Laravel 10.x** dengan front-end **React** dan **
    DB_USERNAME=your_db_username
    DB_PASSWORD=your_db_password
    ```
+   Sesuaikan pengaturan mailer di file `.env`:
    ```
    MAIL_MAILER=smtp
    MAIL_HOST=smtp.mailtrap.io
